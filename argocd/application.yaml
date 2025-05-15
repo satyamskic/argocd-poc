@@ -1,0 +1,35 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: myapp-test-app
+# spec:
+#   source:
+#     repoURL: https://github.com/satyamskic/argocd-poc.git
+#     targetRevision: main
+#     path: ../templates/
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: test
+#   project: default
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample1-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/satyamskic/argocd-poc.git
+    targetRevision: main
+    path: templates/
+    directory:
+      recurse: true  # This allows reading multiple YAMLs in a folder
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
