@@ -25,7 +25,7 @@ spec:
     targetRevision: main
     path: templates/
     directory:
-      recurse: true  # This allows reading multiple YAMLs in a folder
+      recurse: true  
   destination:
     server: https://kubernetes.default.svc
     namespace: default
