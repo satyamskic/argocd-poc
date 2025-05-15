@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sample1-app
+  name: sample2-app
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/satyamskic/argocd-poc.git
-    targetRevision: main
+    targetRevision: feature1
     path: templates/
     directory:
       recurse: true  
