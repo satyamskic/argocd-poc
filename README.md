@@ -12,3 +12,4 @@ kubectl get secret argocd-initial-admin-secret -n argocd
 ### Argocd Username and Password
 Username - admin
 Password - DsyvXi0zrzkj4xc2
+
